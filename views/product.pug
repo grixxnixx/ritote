@@ -1,0 +1,19 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/css2?family=Material+Icons' rel='stylesheet')
+  link(rel='stylesheet' href='css/style.css')
+  title See || All Products
+.container
+  each product in products 
+    .product
+      h2.product__name
+        span.title-first= product.title.split(' ')[0]
+        |  #{product.title.split(' ')[1]}
+      .product__photo
+        img.image(src='https://cdn.sanity.io/images/769hkezm/production/1d9ae5ba38e69d3ebb9b869f5c88acccccb994bc-654x590.png?fm=webp' alt='Apple Container')
+      .product__links
+        button.btn.product__btn= `Add to cart - ${product.price}$`
+        a.product__details(href='#') See more
